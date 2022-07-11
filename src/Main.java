@@ -52,7 +52,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("C:\\Users\\NKcomputer\\IdeaProjects\\Scratcj\\src\\dataset_91069.txt");
+        File file = new File(".\\src\\dataset_91069.txt");
         Scanner sc = new Scanner(file);
         sc.nextLine();
 
@@ -65,7 +65,7 @@ public class Main {
             String[] parts = line.split("\\s+");
 
             int year = Integer.parseInt(parts[0]);
-            long population = Long.parseLong(parts[1]);
+            long population = Long.parseLong(parts[1].replace(",", ""));
 
             years.add(year);
             populations.add(population);
