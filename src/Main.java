@@ -60,6 +60,10 @@ public class Main {
         List<Long> populations = new ArrayList<Long>();
 
         // starting from the second line of the file
+        long previousPopulation = Long.MAX_VALUE;
+        long maxIncrease = 0;
+        int yearWithMaxIncrease = 0;
+
         while (sc.hasNext()) {
             String line = sc.nextLine();
             String[] parts = line.split("\\s+");
@@ -67,22 +71,18 @@ public class Main {
             int year = Integer.parseInt(parts[0]);
             long population = Long.parseLong(parts[1].replace(",", ""));
 
-            years.add(year);
-            populations.add(population);
-        }
-        long maxIncrease = Long.MIN_VALUE;
-        int yearWithMaxIncrease = 0;
+            long increase = population - previousPopulation;
 
-        for (int i = 1; i < years.size(); i++) {
-            long increase = populations.get(i) - populations.get(i-1);
             if (increase > maxIncrease) {
                 maxIncrease = increase;
-                yearWithMaxIncrease = years.get(i);
+                yearWithMaxIncrease = year;
             }
 
+            previousPopulation = population;
         }
+
         System.out.println(yearWithMaxIncrease);
-        }
     }
+}
     
 
