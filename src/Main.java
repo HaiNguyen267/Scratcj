@@ -70,5 +70,19 @@ public class Main {
             years.add(year);
             populations.add(population);
         }
+        long maxIncrease = Long.MIN_VALUE;
+        int yearWithMaxIncrease = 0;
+
+        for (int i = 1; i < years.size(); i++) {
+            long increase = populations.get(i) - populations.get(i-1);
+            if (increase > maxIncrease) {
+                maxIncrease = increase;
+                yearWithMaxIncrease = years.get(i);
+            }
+
+        }
+        System.out.println(yearWithMaxIncrease);
+        }
     }
-}
+    
+
