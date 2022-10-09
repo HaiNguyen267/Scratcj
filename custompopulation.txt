@@ -1,0 +1,12 @@
+Car #1:
+Name: Tesla Model 3
+Distance: 310
+Acceleration: 3.32
+Price: 50000
+
+Car #2:
+Name: GM OLC920
+Distance: 150
+Acceleration: 6.52
+Price: 30000
+
